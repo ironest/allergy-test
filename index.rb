@@ -11,6 +11,11 @@ ALLERGY_DATA = {
 }
 
 
+def check_item
+    
+end
+
+
 # Request a number from the command line; reiterates the request
 # until a valid number is provided
 def get_score()
@@ -27,6 +32,17 @@ def get_score()
     return score
 end
 
+# Request an option between 0, 1, 2; reiterates the request
+# until a valid option is provided
+def get_opt()
+    valid_opt = ["0","1","2"]
+    while true do
+        opt = gets.chomp()
+        break if valid_opt.include?(opt)
+        print "Wrong option. Try again: "
+    end
+    return opt
+end
 
 # Verifies if the provided score is within
 # an acceptable range of values 
@@ -85,6 +101,23 @@ score = get_score()
 
 patient_detail["allergy_list"] = get_patient_allergies(score)
 
-print_allergies(patient_detail)
+while true do
+    puts "\nPlease enter:\n" +
+         " - 1 to check a specific item\n" +
+         " - 2 to print a list of allergies\n" +
+         " - 0 to exit the program"
+
+    option = get_opt()
+
+    case option
+    when "0"
+        exit
+    when "1"
+        check_item()
+    when "2"
+        print_allergies(patient_detail)
+    end
+
+end
 
 
