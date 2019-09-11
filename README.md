@@ -1,6 +1,6 @@
 # allergy-test
 
-Github Repo: [github.com/ironest/battleship](https://github.com/ironest/allergy-test)
+Github Repo: [github.com/ironest/allergy-test](https://github.com/ironest/allergy-test)
 
 Contributors: Riccardo Carzania ([github.com/ironest](https://github.com/ironest))
 
