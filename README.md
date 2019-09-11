@@ -1,5 +1,27 @@
 # allergy-test
 
+Github Repo: [github.com/ironest/battleship](https://github.com/ironest/allergy-test)
+
+Contributors: Riccardo Carzania ([github.com/ironest](https://github.com/ironest))
+
+### Getting started
+
+1. Clone the **allergy-test** git repository locally:
+   ```shell
+   git clone https://github.com/ironest/allergy-test.git
+   ```
+2. Move into the repository folder:
+   ```shell
+   cd allergy-test
+   ```
+3. Start the app
+   ```shell
+   ruby index.rb
+   ```
+4. Enjoy!
+
+### Purpose and Scope
+
 An allergy test produces a single numeric score which contains the information about all the allergies the person has (that they were tested for). The list of items (and their value) that were tested are:
  * eggs (1)
  * peanuts (2)
