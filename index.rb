@@ -11,8 +11,24 @@ ALLERGY_DATA = {
 }
 
 
-def check_item
-    
+# Check if a patient is allergic to a given item
+def check_item(pat)
+    system("clear")
+    item = nil
+    print "Enter item to check or type 'exit' to go to back: "
+    while true
+        item = gets.chomp()
+        break if ALLERGY_DATA.include?(item)
+        return if item.downcase == "exit"
+        print "'#{item}' is not a recognized allergen. Try again: "
+    end
+    if pat["allergy_list"].include?(item)
+        puts "POSITIVE, patient #{pat["name"]} is allergic to #{item}"
+    else
+        puts "NEGATIVE, patient #{pat["name"]} is not allergic to #{item}"
+    end
+    puts "\nPress ENTER to return to the MENU"
+    gets.chomp()
 end
 
 
@@ -32,6 +48,7 @@ def get_score()
     return score
 end
 
+
 # Request an option between 0, 1, 2; reiterates the request
 # until a valid option is provided
 def get_opt()
@@ -43,6 +60,7 @@ def get_opt()
     end
     return opt
 end
+
 
 # Verifies if the provided score is within
 # an acceptable range of values 
@@ -76,7 +94,7 @@ end
 # Nicely prints to the terminal a report with the patient
 # informatio, including name and a list of allergies
 def print_allergies(pat)
-
+    system("clear")
     print "Patient #{pat["name"]} is allergic to: "
     if pat["allergy_list"].length == 0
         puts "nothing"
@@ -85,12 +103,15 @@ def print_allergies(pat)
         pat["allergy_list"].each do |value|
             puts " - #{value}"
         end
-    end    
-
+    end
+    puts "\nPress ENTER to return to the MENU"
+    gets.chomp()
 end
 
 
 # Body of the program
+
+system("clear")
 patient_detail = {}
 
 print "Insert patient name: "
@@ -102,18 +123,17 @@ score = get_score()
 patient_detail["allergy_list"] = get_patient_allergies(score)
 
 while true do
-    puts "\nPlease enter:\n" +
+    system("clear")
+    puts "Please enter:\n" +
          " - 1 to check a specific item\n" +
          " - 2 to print a list of allergies\n" +
          " - 0 to exit the program"
 
-    option = get_opt()
-
-    case option
+    case get_opt()
     when "0"
         exit
     when "1"
-        check_item()
+        check_item(patient_detail)
     when "2"
         print_allergies(patient_detail)
     end
