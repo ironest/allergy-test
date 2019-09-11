@@ -10,7 +10,28 @@ ALLERGY_DATA = {
     "cats":         128,
 }
 
-puts "Insert patient score: "
+def get_patient_allergies( score )
+
+    patient = {}
+
+    while score > 0 do
+
+        ALLERGY_DATA.each do |key, value|
+
+            if value <= score and 2*value > score
+                patient[key] = value
+                score -= value
+            else
+                next
+            end
+        end
+    end
+
+    return patient
+
+end
+
+print "Insert patient score: "
 while true do
     
     score = gets.chomp()
@@ -19,8 +40,11 @@ while true do
         score = Float(score)
         break
     rescue
-        puts "Wrong input. Insert patient score: "
+        print "Wrong input. Try again: "
         next
     end
 
 end
+
+p get_patient_allergies(score)
+
