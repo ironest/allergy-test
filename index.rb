@@ -9,3 +9,18 @@ ALLERGY_DATA = {
     "pollen":       64,
     "cats":         128,
 }
+
+puts "Insert patient score: "
+while true do
+    
+    score = gets.chomp()
+
+    begin
+        score = Float(score)
+        break
+    rescue
+        puts "Wrong input. Insert patient score: "
+        next
+    end
+
+end
