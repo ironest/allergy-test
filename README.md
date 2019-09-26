@@ -4,6 +4,11 @@ Github Repo: [github.com/ironest/allergy-test](https://github.com/ironest/allerg
 
 Contributors: Riccardo Carzania ([github.com/ironest](https://github.com/ironest))
 
+### Prerequisites
+Make sure you have installed following prerequisites on your machine:
+* Git - [Download & Install Git](https://git-scm.com/downloads)
+* Ruby - [Ruby Installation guide](https://www.ruby-lang.org/en/documentation/installation/) (this was built on Ruby version 2.6.3, but other versions should work fine)
+
 ### Getting started
 
 1. Clone the **allergy-test** git repository locally:
