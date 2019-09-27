@@ -14,8 +14,10 @@ ALLERGY_DATA = {
 # Check if a patient is allergic to a given item
 def check_item(pat)
     system("clear")
+    puts "List of allergens: #{ALLERGY_DATA.keys.join(', ')}"
+    puts "Enter the allergen you would like to check (or type 'exit' to go to previous menu)"
+
     item = nil
-    print "Enter item to check or type 'exit' to go to back: "
     while true
         item = gets.chomp()
         break if ALLERGY_DATA.include?(item)
